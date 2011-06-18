@@ -1,5 +1,8 @@
 See http://github.com/miyagawa/cpanminus/ for the latest development.
 
+1.1005  2011-06-18T18:04:24
+   - follow symlinks when traversing @INC
+
 1.1004  2011-06-18T16:29:12
    - catch all modules by recursing through parent modules to find a version
 

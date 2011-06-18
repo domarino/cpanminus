@@ -13,7 +13,7 @@ use Parse::CPAN::Meta;
 use constant WIN32 => $^O eq 'MSWin32';
 use constant SUNOS => $^O eq 'solaris';
 
-our $VERSION = "1.1004";
+our $VERSION = "1.1005";
 $VERSION = eval $VERSION;
 
 my $quote = WIN32 ? q/"/ : q/'/;
@@ -1562,7 +1562,7 @@ sub get_installed_mods {
     my $self = shift;
     for my $startdir (@INC) {
         $module_dir = $startdir;
-        find(\&parse_tree_wanted, $startdir);
+        eval { find({ follow => 1, wanted => \&parse_tree_wanted }, $startdir) };
     }
     return 1;
 }
