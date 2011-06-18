@@ -86,7 +86,7 @@ sub pipeline {
 package local::lib;
 
 { package Foo; sub foo { -$_[1] } sub bar { $_[1]+2 } sub baz { $_[1]+3 } }
-my $foo = bless({}, 'Foo');                                                 
+my $foo = bless({}, 'Foo');
 Test::More::ok($foo->${pipeline qw(foo bar baz)}(10) == -15);
 
 =end testing
@@ -444,7 +444,7 @@ installing modules by using the C<--no-manpages> argument when bootstrapping:
 
   perl Makefile.PL --bootstrap --no-manpages
 
-If you want to install multiple Perl module environments, say for application development, 
+If you want to install multiple Perl module environments, say for application development,
 install local::lib globally and then:
 
   cd ~/mydir1
@@ -478,7 +478,7 @@ Put this before any BEGIN { ... } blocks that require the modules you installed.
   set PERL_MM_OPT=INSTALL_BASE=C:\DOCUME~1\ADMINI~1\perl5
   set PERL5LIB=C:\DOCUME~1\ADMINI~1\perl5\lib\perl5;C:\DOCUME~1\ADMINI~1\perl5\lib\perl5\MSWin32-x86-multi-thread
   set PATH=C:\DOCUME~1\ADMINI~1\perl5\bin;%PATH%
-  
+
     ### To set the environment for this shell alone
   C:\>perl -Mlocal::lib > %TEMP%\tmp.bat && %TEMP%\tmp.bat && del %TEMP%\temp.bat
   ### instead of $(perl -Mlocal::lib=./)
@@ -512,7 +512,7 @@ packages takes precedence over the system installation.
 If you are using a package management system (such as Debian), you don't need to
 worry about Debian and CPAN stepping on each other's toes.  Your local version
 of the packages will be written to an entirely separate directory from those
-installed by Debian.  
+installed by Debian.
 
 =head1 DESCRIPTION
 

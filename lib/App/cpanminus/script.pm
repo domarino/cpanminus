@@ -13,7 +13,7 @@ use Parse::CPAN::Meta;
 use constant WIN32 => $^O eq 'MSWin32';
 use constant SUNOS => $^O eq 'solaris';
 
-our $VERSION = "1.1003";
+our $VERSION = "1.1004";
 $VERSION = eval $VERSION;
 
 my $quote = WIN32 ? q/"/ : q/'/;
@@ -1580,14 +1580,22 @@ sub parse_tree_wanted {
     (my $tmpname = $mod) =~ s{^$module_dir/}{};
 
     $mod =~ s{^$module_dir/}{};
+      return if ($mod =~ m/^\d/);
     $mod =~ s/\.pm$//;
     $mod =~ s{/}{::}g;
 
     require Module::Metadata;
     my $meta = Module::Metadata->new_from_module($mod, inc => [ $module_dir ]);
 
-    return unless $meta->version;
-    print "$mod (".$meta->version.")\n";
+    my $version;
+    my $orig_mod = $mod;
+    until ($meta->version or $mod !~ m/::/) {
+        $mod =~ s/::[^:]+$//;
+        $meta = Module::Metadata->new_from_module($mod, inc => [ $module_dir ]);
+        return unless $meta;
+    }
+    my $version = $meta->version || 0;
+    print "$orig_mod ($version)\n";
 }
 
 1;

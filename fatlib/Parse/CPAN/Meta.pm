@@ -350,7 +350,7 @@ Parse::CPAN::Meta - Parse META.yml and other similar CPAN metadata files
 
     #############################################
     # In your file
-    
+
     ---
     rootproperty: blah
     section:
@@ -358,17 +358,17 @@ Parse::CPAN::Meta - Parse META.yml and other similar CPAN metadata files
       three: four
       Foo: Bar
       empty: ~
-    
-    
-    
+
+
+
     #############################################
     # In your program
-    
+
     use Parse::CPAN::Meta;
-    
+
     # Create a YAML file
     my @yaml = Parse::CPAN::Meta::LoadFile( 'Meta.yml' );
-    
+
     # Reading properties
     my $root = $yaml[0]->{rootproperty};
     my $one  = $yaml[0]->{section}->{one};

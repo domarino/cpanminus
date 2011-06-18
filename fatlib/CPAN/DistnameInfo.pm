@@ -22,7 +22,7 @@ sub distname_info {
   }
 
   if ($version =~ /^(-[Vv].*)-(\d.*)/) {
-   
+
     # Catch names like Unicode-Collate-Standard-V3_1_1-0.1
     # where the V3_1_1 is part of the distname
     $dist .= $1;
@@ -184,7 +184,7 @@ The extracted version
 
 Graham Barr <gbarr@pobox.com>
 
-=head1 COPYRIGHT 
+=head1 COPYRIGHT
 
 Copyright (c) 2003 Graham Barr. All rights reserved. This program is
 free software; you can redistribute it and/or modify it under the same

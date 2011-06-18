@@ -1,5 +1,5 @@
 package App::cpanminus;
-our $VERSION = "1.1003";
+our $VERSION = "1.1004";
 
 =head1 NAME
 
@@ -89,7 +89,7 @@ think so.
 =head2 But why a new client?
 
 First of all, I have no intention to dis CPAN or CPANPLUS
-developers. Don't get me wrong. They're great tools I've 
+developers. Don't get me wrong. They're great tools I've
 used for I<literally> years (you know how many modules I have
 on CPAN, right?). I really respect their efforts of maintaining the
 most important tools in the CPAN toolchain ecosystem.

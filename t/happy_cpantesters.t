@@ -7,7 +7,7 @@ BEGIN{
     require_ok 'App::cpanminus';
 
     # in the future ...
-    # require_ok 'App::cpanminus::script'; 
+    # require_ok 'App::cpanminus::script';
 }
 
 diag("App::cpanminus/$App::cpanminus::VERSION");
