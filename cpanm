@@ -19,7 +19,7 @@ my %fatpacked;
 
 $fatpacked{"App/cpanminus.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'APP_CPANMINUS';
   package App::cpanminus;
-  our $VERSION = "1.1005";
+  our $VERSION = "1.1006";
   
   =head1 NAME
   
@@ -338,7 +338,7 @@ $fatpacked{"App/cpanminus/script.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\
   use constant WIN32 => $^O eq 'MSWin32';
   use constant SUNOS => $^O eq 'solaris';
   
-  our $VERSION = "1.1005";
+  our $VERSION = "1.1006";
   $VERSION = eval $VERSION;
   
   my $quote = WIN32 ? q/"/ : q/'/;
