@@ -223,7 +223,7 @@ sub search_mirror_index {
 
   open my $fh, '<', $self->package_index_for($mirror) or return;
   while (<$fh>) {
-    if (m!^\Q$module\E\s+[\w\.]+\s+(.*)!m) {
+    if (/^\Q$module\E\s+[\w\.]+\s+(.*)/) {
       return $self->cpan_module($module, $1);
     }
   }
@@ -1196,7 +1196,7 @@ sub find_prereqs {
         $self->chat("Finding PREREQ from Makefile ...\n");
         open my $mf, "Makefile";
         while (<$mf>) {
-            if (/^\#\s+PREREQ_PM => {\s*(.*?)\s*}/) {
+            if (/^\#\s+PREREQ_PM => \{\s*(.*?)\s*\}/) {
                 my @all;
                 my @pairs = split ', ', $1;
                 for (@pairs) {
