@@ -1,5 +1,8 @@
 See http://github.com/miyagawa/cpanminus/ for the latest development.
 
+1.1006  2016-02-19T07:39:18
+   - suppress warning for unescaped {
+
 1.1005  2011-06-18T18:04:24
    - follow symlinks when traversing @INC
 
